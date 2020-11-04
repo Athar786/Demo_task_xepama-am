@@ -39,7 +39,7 @@
                         @if(count($states)>0)
                         @foreach($states as $items =>$value)
                        
-                        @if($items== $users->state)
+                        @if($items == $users->state)
                             <option selected value="{{ $items }}">{{$value}}</option>
                         @else
                         <option value="{{ $items }}">{{ $value }}</option>
@@ -68,7 +68,7 @@
 
                     <div class = "form-group">
                         <label for = "address">Address</label>
-                        <textarea name="address" value = "{{ $users->address }}"></textarea>
+                        <textarea value = "{{ $users->address }}" name="address" id="address" ></textarea>
                     </div>
 
 

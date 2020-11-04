@@ -150,7 +150,7 @@ class AdduserController extends Controller
         $user->address = $request->input('address');
         $user->update();
         
-        return redirect('/home');
+        return redirect()->route('home');
     }
 
     /**
@@ -165,6 +165,6 @@ class AdduserController extends Controller
 
         $deluser = adduser::find($id);
         $deluser->delete();
-        return redirect('/home')->with('success', 'AddUser deleted!');
+        return redirect('/home');
     }
 }

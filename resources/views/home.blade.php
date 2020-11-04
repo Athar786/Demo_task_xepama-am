@@ -13,7 +13,7 @@
 <div class="container">
 
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <div class="card">
                 <div class="card-header">User Dashboard</div>
 
@@ -25,7 +25,7 @@
                     @endif 
 
                     @can('create',App\adduser::class)
-                        <a href="/add" class="btn btn-primary">Add Data</a>
+                        <a href="{{route('add')}}" class="btn btn-primary">Add Data</a>
                     @endcan
 
                 <a href="/admin" class="btn btn-primary">Admin List</a>

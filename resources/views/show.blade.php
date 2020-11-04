@@ -24,7 +24,7 @@
                         </div>
                     @endif 
 
-                    <a href="/home" class="btn btn-primary">Back Home</a>
+                    <a href="{{route('home')}}" class="btn btn-primary">Back Home</a>
                     <hr/>
 
                     <table border="2" class="table table-hover" id="table_id">

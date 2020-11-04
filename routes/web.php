@@ -35,7 +35,7 @@ Route::group(['middleware' => ['auth','role']], function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/search', 'HomeController@search')->name('home.search');
 
-Route::any('add','AdduserController@store');
+Route::any('add','AdduserController@store')->name('add');
 Route::get('show/{id}','AdduserController@show')->middleware('can:view,id');
 Route::put('/edit/{id}','AdduserController@update');
 Route::get('/edit/{id}','AdduserController@edit');  
@@ -50,12 +50,16 @@ Route::get('add/ajax/{id}',array('as'=>'myform.ajax','uses'=>'AdduserController@
 
 // Route::get('/search', 'HomeController@index');
 
-Route::get('/editcategory', function () {
-    return view('editcategory');
-});
+// Route::get('/editcategory', function () {
+//     return view('editcategory');
+// });
 
 Route::get('/lang/{lang}',function($lang){
     App::setlocale($lang);
     return view('home');
 });
 
+$user = Auth::loginUsingId(15);
+Route::get('testemail',function() use($user){
+    Mail::to($user)->send(new WelcomeMail($user));
+});

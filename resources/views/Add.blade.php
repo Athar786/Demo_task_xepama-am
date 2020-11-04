@@ -58,7 +58,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Form') }}</div>
 
-                <a href="/home" class="btn btn-primary">Back Home</a>
+                <a href="{{route('home')}}" class="btn btn-primary">Back Home</a>
 
             
                 <div class="card-body">
